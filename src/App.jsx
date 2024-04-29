@@ -10,13 +10,8 @@ import Footer from "./components/FooterBar";
 import TopBar from "./components/TopBar";
 import Welcome from "./components/Welcome";
 import { Component } from "react";
-import Comments from "./components/Comments";
 
 class App extends Component {
-  state = {
-    idLibro: "",
-  };
-
   getId(id) {
     this.setState({ idLibro: id });
   }
@@ -26,7 +21,6 @@ class App extends Component {
         <TopBar />
         <Welcome />
         <AllTheBooks books={horror} />
-        <Comments idCard="" />
         <Footer />
       </div>
     );

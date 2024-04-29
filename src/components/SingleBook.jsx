@@ -1,13 +1,10 @@
 import { Component } from "react";
 import { Badge, Button, Card, Col } from "react-bootstrap";
-
 class SingleBook extends Component {
   state = {
-    idCard: "",
+    asinBook: null,
   };
-  getId(idCard) {
-    this.setState(idCard);
-  }
+
   render() {
     return (
       <Col>
