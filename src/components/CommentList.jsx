@@ -28,7 +28,7 @@ const CommentList = (props) => {
   //   }
   useEffect(() => {
     getFetch();
-  });
+  }, []);
   return (
     <ListGroup>
       {commenti.map((commento) => {
