@@ -11,20 +11,15 @@ import TopBar from "./components/TopBar";
 import Welcome from "./components/Welcome";
 import { Component } from "react";
 
-class App extends Component {
-  getId(id) {
-    this.setState({ idLibro: id });
-  }
-  render() {
-    return (
-      <div className="App">
-        <TopBar />
-        <Welcome />
-        <AllTheBooks books={horror} />
-        <Footer />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <TopBar />
+      <Welcome />
+      <AllTheBooks books={horror} />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

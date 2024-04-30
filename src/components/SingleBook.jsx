@@ -1,31 +1,32 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 import { Badge, Button, Card, Col } from "react-bootstrap";
-class SingleBook extends Component {
-  state = {
-    asinBook: null,
-  };
+import CommentArea from "./CommentArea";
+const SingleBook = (props) => {
+  // state = {
+  //   selected: false,
+  // };
 
-  render() {
-    return (
-      <Col>
-        <Card>
-          <Card.Img variant="top" src={this.props.image} />
-          <Card.Body>
-            <Card.Title>{this.props.title}</Card.Title>
-            <Card.Text>
-              Price: <Badge bg="success">{this.props.price}</Badge>
-            </Card.Text>
-            <Card.Text>Asin Code: {this.props.asin}</Card.Text>
+  const [selected, setSelected] = useState(false);
+  return (
+    <Col>
+      <Card className="overflow-y-auto " onClick={() => setSelected(!selected)}>
+        <Card.Img variant="top" src={props.image} />
+        <Card.Body>
+          <Card.Title>{props.title}</Card.Title>
+          <Card.Text>
+            Price: <Badge bg="success">{props.price}</Badge>
+          </Card.Text>
+          <Card.Text>Asin Code: {props.asin}</Card.Text>
 
-            <Button variant="dark" href="https://puginarug.com/">
-              {" "}
-              Scopri di più
-            </Button>
-          </Card.Body>
-        </Card>
-      </Col>
-    );
-  }
-}
+          <Button variant="dark" href="https://puginarug.com/">
+            {" "}
+            Scopri di più
+          </Button>
+          {selected && <CommentArea asinBook={props.asin} />}
+        </Card.Body>
+      </Card>
+    </Col>
+  );
+};
 
 export default SingleBook;
